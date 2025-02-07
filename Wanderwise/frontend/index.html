@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderWise - Your Travel Companion</title>
+    <link rel="stylesheet" href="../frontend/css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i data-lucide="map-pin"></i>
+                <span>WanderWise</span>
+            </div>
+            
+            <div class="nav-links">
+                <button class="nav-button">Home</button>
+                
+                <div class="dropdown">
+                    <button class="nav-button">
+                        Personalized Recommendations
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="../frontend/restaurants.html" target="_blank">
+                            <i data-lucide="utensils" class="w-4 h-4 mr-2"></i>
+                            Restaurants
+                        </a>
+                        <a href="../frontend/hotels.html" target="_blank">
+                            <i data-lucide="hotel" class="w-4 h-4 mr-2"></i>
+                            Hotels
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-button">
+                        Real-time Popularity
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="/popularity/trending.html">
+                            <i data-lucide="trending-up"></i>
+                            Trending Places
+                        </a>
+                        <a href="/popularity/crowd-levels.html">
+                            <i data-lucide="users"></i>
+                            Current Crowd Levels
+                        </a>
+                        <a href="/popularity/peak-times.html">
+                            <i data-lucide="clock"></i>
+                            Peak Times
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-button">
+                        Sentiment Analysis
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="/sentiment/reviews.html">
+                            <i data-lucide="message-square"></i>
+                            Review Analysis
+                        </a>
+                        <a href="/sentiment/social-media.html">
+                            <i data-lucide="share-2"></i>
+                            Social Media Insights
+                        </a>
+                        <a href="/sentiment/ratings.html">
+                            <i data-lucide="star"></i>
+                            Rating Trends
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-button">
+                        Dynamic Route Planner
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="/routes/create.html">
+                            <i data-lucide="map"></i>
+                            Create Route
+                        </a>
+                        <a href="/routes/optimize.html">
+                            <i data-lucide="git-branch"></i>
+                            Optimize Route
+                        </a>
+                        <a href="/routes/saved.html">
+                            <i data-lucide="bookmark"></i>
+                            Saved Routes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="login-button" onclick="toggleLoginModal()">
+                <i data-lucide="log-in"></i>
+                Login
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="slider">
+            <!-- Images will be inserted by JavaScript -->
+        </div>
+
+        <button class="slider-control prev" onclick="prevImage()">
+            <i data-lucide="chevron-left"></i>
+        </button>
+        <button class="slider-control next" onclick="nextImage()">
+            <i data-lucide="chevron-right"></i>
+        </button>
+
+        <div class="hero-content">
+            <h1>Discover Your Perfect Stay</h1>
+            <p>Using AI to find the best restaurants and hotels tailored to your preferences</p>
+            <button class="cta-button">Start Exploring</button>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-container">
+        <div class="features-row">
+            <div class="feature-card">
+                <i data-lucide="sparkles" class="feature-icon"></i>
+                <h3>Personalized Recommendations</h3>
+                <p>AI-powered suggestions tailored to your unique preferences and past experiences.</p>
+            </div>
+            <div class="feature-card">
+                <i data-lucide="trending-up" class="feature-icon"></i>
+                <h3>Real-time Popularity</h3>
+                <p>Live updates on trending places and current crowd levels at your destinations.</p>
+            </div>
+            <div class="feature-card">
+                <i data-lucide="heart" class="feature-icon"></i>
+                <h3>Sentiment Analysis</h3>
+                <p>Deep insights from reviews and social media to gauge true customer satisfaction.</p>
+            </div>
+            <div class="feature-card">
+                <i data-lucide="map" class="feature-icon"></i>
+                <h3>Dynamic Route Planner</h3>
+                <p>Smart itinerary planning that adapts to your schedule and preferences.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="about-section">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2070" alt="Team collaboration">
+        </div>
+        <div class="about-content">
+            <h2>About WanderWise</h2>
+            <p>At WanderWise, we're revolutionizing travel planning through artificial intelligence. Our team of passionate travelers and tech enthusiasts came together with one mission: to make every journey extraordinary.</p>
+            <p>We understand that every traveler is unique, which is why our AI-powered platform learns from your preferences to create truly personalized experiences. From finding hidden gems to optimizing your itinerary, we're here to make your travel dreams a reality.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i data-lucide="mail" class="footer-icon"></i> support@wanderwise.com</p>
+                <p><i data-lucide="phone" class="footer-icon"></i> +1 (555) 123-4567</p>
+                <p><i data-lucide="map-pin" class="footer-icon"></i> 123 Travel Street, Journey City, TC 12345</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i data-lucide="facebook"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WanderWise. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="close-button" onclick="toggleLoginModal()">
+                <i data-lucide="x"></i>
+            </button>
+            
+            <h2>Welcome Back</h2>
+            
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                
+                <button type="submit" class="login-submit-button">
+                    <i data-lucide="log-in"></i>
+                    Sign In
+                </button>
+            </form>
+            
+            <div class="divider">
+                <span>Or continue with</span>
+            </div>
+            
+            <button class="google-button" onclick="handleGoogleLogin()">
+                <img src="https://www.google.com/favicon.ico" alt="Google">
+                Google
+            </button>
+        </div>
+    </div>
+
+    <script src="../frontend/js/app.js"></script>
+</body>
+</html>

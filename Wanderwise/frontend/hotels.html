@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels - WanderWise</title>
+    <link rel="stylesheet" href="../frontend/css/styles.css">
+    <link rel="stylesheet" href="../frontend/css/hotels.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i data-lucide="map-pin"></i>
+                <span>WanderWise</span>
+            </div>
+            
+            <div class="nav-links">
+                <button class="nav-button">Home</button>
+                
+                <div class="dropdown">
+                    <button class="nav-button">Personalized Recommendations <i data-lucide="chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="../frontend/restaurants.html"><i data-lucide="utensils"></i> Restaurants</a>
+                        <a href="../frontend/hotels.html"><i data-lucide="hotel"></i> Hotels</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-button">Real-time Popularity <i data-lucide="chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="/popularity/trending.html"><i data-lucide="trending-up"></i> Trending Places</a>
+                        <a href="/popularity/crowd-levels.html"><i data-lucide="users"></i> Current Crowd Levels</a>
+                        <a href="/popularity/peak-times.html"><i data-lucide="clock"></i> Peak Times</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-button">Sentiment Analysis <i data-lucide="chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="/sentiment/reviews.html"><i data-lucide="message-square"></i> Review Analysis</a>
+                        <a href="/sentiment/social-media.html"><i data-lucide="share-2"></i> Social Media Insights</a>
+                        <a href="/sentiment/ratings.html"><i data-lucide="star"></i> Rating Trends</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-button">Dynamic Route Planner <i data-lucide="chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="/routes/create.html"><i data-lucide="map"></i> Create Route</a>
+                        <a href="/routes/optimize.html"><i data-lucide="git-branch"></i> Optimize Route</a>
+                        <a href="/routes/saved.html"><i data-lucide="bookmark"></i> Saved Routes</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="login-button">
+                <i data-lucide="log-in"></i> Login
+            </button>
+        </div>
+    </nav>
+
+    <!-- Background Carousel -->
+    <div class="background-carousel">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../frontend/images/hotel1.jpg" alt="Hotel 1"></div>
+                <div class="swiper-slide"><img src="../frontend/images/hotel2.jpg" alt="Hotel 2"></div>
+                <div class="swiper-slide"><img src="../frontend/images/hotel3.jpg" alt="Hotel 3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hotel Suggestion Form -->
+    <section class="hotel-form-container">
+        <h2>Find Your Ideal Hotel 🏨</h2>
+        <form id="hotel-form">
+            <label for="location">Location</label>
+            <select id="location">
+                <option value="">Select a City</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bangalore">Bangalore</option>
+            </select>
+
+            <label for="rating">Minimum Star Rating</label>
+            <input type="number" id="rating" min="1" max="5" step="0.1" placeholder="4.0">
+
+            <label for="budget">Budget (₹)</label>
+            <select id="budget">
+                <option value="">Select Budget</option>
+                <option value="Low">₹</option>
+                <option value="Medium">₹₹</option>
+                <option value="High">₹₹₹</option>
+            </select>
+
+            <label for="amenities">Preferred Amenities</label>
+            <select id="amenities">
+                <option value="">Select Amenities</option>
+                <option value="WiFi">Free WiFi</option>
+                <option value="Breakfast">Breakfast Included</option>
+                <option value="Pool">Swimming Pool</option>
+            </select>
+
+            <button type="submit">Get Hotel Recommendations</button>
+        </form>
+    </section>
+
+    <script src="../frontend/js/hotels.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "fade",
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            }
+        });
+    </script>
+</body>
+</html>
